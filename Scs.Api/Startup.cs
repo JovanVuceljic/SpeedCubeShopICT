@@ -5,10 +5,15 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Scs.Api.Core;
+using Scs.Application;
 using Scs.Application.Commands;
+using Scs.Application.Queries;
 using Scs.DataAccess;
 using Scs.Implementation;
 using Scs.Implementation.Commands;
+using Scs.Implementation.Queries;
+using Scs.Implementation.Validators;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,9 +34,17 @@ namespace Scs.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddTransient<ScsContext>();
-            services.AddTransient<ICreateBrandCommand, EfCreateBrandCommad>();
+
+        /* Brand */
             //services.AddTransient<ICreateBrandCommand, RawSqlCreateBrandCommand>();
+            services.AddTransient<ICreateBrandCommand, EfCreateBrandCommad>();
             services.AddTransient<IDeleteBrandCommand, EfDeleteBrandCommand>();
+            services.AddTransient<IGetBrandsQuery, EfGetBrandsQuery>();
+            services.AddTransient<CreateBrandValidator>();
+            
+            
+            services.AddTransient<IApplicationActor, FakeApiActor>();
+            services.AddTransient<UseCaseExecutor>();
             services.AddControllers();
         }
 

@@ -1,7 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Scs.Application;
 using Scs.Application.Commands;
 using Scs.Application.DataTransfer;
 using Scs.Application.Exceptions;
+using Scs.Application.Queries;
+using Scs.Application.Searches;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,13 +16,25 @@ namespace Scs.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class TestController : ControllerBase
+    public class BrandController : ControllerBase
     {
+
+        private readonly IApplicationActor actor;
+        private readonly UseCaseExecutor executor;
+
+
+        public BrandController(IApplicationActor actor, UseCaseExecutor executor)
+        {
+            this.actor = actor;
+            this.executor = executor;
+        }
+
         // GET: api/<TestController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IActionResult Get([FromQuery] BrandSearch search, [FromServices] IGetBrandsQuery query)
         {
-            return new string[] { "value1", "value2" };
+            return Ok(query.Execute(search));
+            //return Ok(actor);
         }
 
         // GET api/<TestController>/5
@@ -33,7 +48,7 @@ namespace Scs.Api.Controllers
         [HttpPost]
         public void Post([FromBody] BrandDto dto, [FromServices] ICreateBrandCommand command)
         {
-            command.Execute(dto);
+            executor.ExecuteCommand(command, dto);
         }
 
         // PUT api/<TestController>/5
@@ -46,20 +61,8 @@ namespace Scs.Api.Controllers
         [HttpDelete("{id}")]
         public IActionResult Delete(int id, [FromServices] IDeleteBrandCommand command)
         {
-            try
-            {
-                command.Execute(id);
-                return Ok();
-            }
-            catch (EntityNotFoundException ex)
-            {
-                return NotFound();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-                return StatusCode(500, "Error happened");
-            }
+            executor.ExecuteCommand(command, id);
+            return NoContent();
 
         }
     }
