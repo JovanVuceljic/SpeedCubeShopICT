@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-//using FluentValidation;
+using FluentValidation;
 
 namespace Nedelja7.Api.Core
 {
@@ -46,8 +46,7 @@ namespace Nedelja7.Api.Core
                             message = "Resource not found."
                         };
                         break;
-                   //TODO DOESN'T WORK WITH NEW VERSION
-                   /* case ValidationException validationException:
+                    case ValidationException validationException:
                         statusCode = StatusCodes.Status422UnprocessableEntity;
 
 
@@ -61,7 +60,7 @@ namespace Nedelja7.Api.Core
                             })
                         };
                         break;
-                    */
+                    
                 }
 
                 httpContext.Response.StatusCode = statusCode;
