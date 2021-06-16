@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Scs.Application.Queries
 {
-    public interface IGetBrandsQuery : IQuery<BrandSearch, IEnumerable<BrandDto>>
+    public interface IGetBrandsQuery : IQuery<BrandSearch, PagedResponse<BrandDto>>
     {
     }
 

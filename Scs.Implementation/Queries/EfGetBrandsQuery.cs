@@ -24,7 +24,7 @@ namespace Scs.Implementation.Queries
         public string Name => "Brand Search";
 
 
-        public IEnumerable<BrandDto> Execute(BrandSearch search)
+        public PagedResponse<BrandDto> Execute(BrandSearch search)
         {
 
             var query = context.Brands.AsQueryable();
@@ -34,12 +34,29 @@ namespace Scs.Implementation.Queries
                 query = query.Where(x => x.Name.ToLower().Contains(search.Name.ToLower()));
             }
 
+            var skipCount = search.PerPage * (search.Page - 1);
+
+            var response = new PagedResponse<BrandDto>
+            {
+                CurrentPage = search.Page,
+                ItemsPerPage = search.PerPage,
+                TotalCount = query.Count(),
+                Items = query.Skip(skipCount).Take(search.PerPage).Select(x => new BrandDto {
+                    Id = x.Id,
+                    Name = x.Name
+                }).ToList()
+            };
+
+            return response;
+    
+    /*      
             return query.Select(x => new BrandDto
             {
                 Id = x.Id,
                 Name = x.Name
 
             }).ToList();
+    */
 
         }
 
