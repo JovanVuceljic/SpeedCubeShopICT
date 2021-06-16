@@ -19,6 +19,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Domain\Scs.Domain.csproj" />
+    <ProjectReference Include="..\Scs.Application\Scs.Application.csproj" />
   </ItemGroup>
 
 </Project>
