@@ -4,14 +4,12 @@ using System.Text;
 
 namespace Scs.Application
 {
-    public interface ICommand
-    {
-        public interface ICommand<TRequest> : IUseCase
-        {
-            void Execute(TRequest request);
-        }
 
+    public interface ICommand<TRequest> : IUseCase
+    {
+        void Execute(TRequest request);
     }
+
     public interface IQuery<TSearch, TResult> : IUseCase
     {
         TResult Execute(TSearch search);
