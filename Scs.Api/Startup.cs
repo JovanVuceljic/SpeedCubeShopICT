@@ -12,6 +12,7 @@ using Scs.Application.Queries;
 using Scs.DataAccess;
 using Scs.Implementation;
 using Scs.Implementation.Commands;
+using Scs.Implementation.Logging;
 using Scs.Implementation.Queries;
 using Scs.Implementation.Validators;
 using System;
@@ -41,9 +42,10 @@ namespace Scs.Api
             services.AddTransient<IDeleteBrandCommand, EfDeleteBrandCommand>();
             services.AddTransient<IGetBrandsQuery, EfGetBrandsQuery>();
             services.AddTransient<CreateBrandValidator>();
-            
-            
-            services.AddTransient<IApplicationActor, FakeApiActor>();
+
+
+            services.AddTransient<IApplicationActor, AdminFakeActor>();
+            services.AddTransient<IUseCaseLogger, ConsoleUseCaseLogger>();
             services.AddTransient<UseCaseExecutor>();
             services.AddControllers();
         }

@@ -29,16 +29,19 @@ namespace Scs.Api.Controllers
             this.executor = executor;
         }
 
+
         // GET: api/<TestController>
         [HttpGet]
         public IActionResult Get([FromQuery] BrandSearch search, [FromServices] IGetBrandsQuery query)
         {
-            return Ok(query.Execute(search));
+
+            //return Ok(query.Execute(search));
             //return Ok(actor);
+            return Ok(executor.ExecuteQuery(query, search));
         }
 
         // GET api/<TestController>/5
-        [HttpGet("{id}")]
+        [HttpGet("{id}", Name = "Get")]
         public string Get(int id)
         {
             return "value";
