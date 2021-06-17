@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.14" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Domain\Scs.Domain.csproj" />
     <ProjectReference Include="..\Scs.Application\Scs.Application.csproj" />
     <ProjectReference Include="..\Scs.DataAccess\Scs.EfDataAccess.csproj" />
