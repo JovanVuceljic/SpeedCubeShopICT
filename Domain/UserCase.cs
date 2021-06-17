@@ -8,6 +8,6 @@ namespace Scs.Domain
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public virtual ICollection<UserUserCase> UserCases { get; set; }
+        public virtual ICollection<UserUserCase> UserUserCases { get; set; }
     }
 }
