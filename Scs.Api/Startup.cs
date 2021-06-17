@@ -39,9 +39,17 @@ namespace Scs.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddTransient<ScsContext>();
+            
             services.AddTransient<ICreateBrandCommand, EfCreateBrandCommad>();
-            services.AddTransient<IDeleteBrandCommand, EfDeleteBrandCommand>();
             services.AddTransient<IGetBrandsQuery, EfGetBrandsQuery>();
+            services.AddTransient<IDeleteBrandCommand, EfDeleteBrandCommand>();
+
+
+            services.AddTransient<ICreateCategoryCommand, EfCreateCategoryCommand>();
+            services.AddTransient<IDeleteCategoryCommand, EfDeleteCategoryCommand>();
+            //services.AddTransient<IGetCategoriesQuery, EfGetCategoryQuery>();
+
+
             services.AddHttpContextAccessor();
 
             //services.AddTransient<IApplicationActor, AdminFakeActor>();
