@@ -12,5 +12,6 @@ namespace Scs.DataAccess
             base.OnConfiguring(optionsBuilder);
         }
         public DbSet<Brand> Brands { get; set; }
+        public DbSet<User> Users { get; set; }
     }
 }
