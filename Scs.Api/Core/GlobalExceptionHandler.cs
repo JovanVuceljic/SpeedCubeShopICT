@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using FluentValidation;
 
-namespace Nedelja7.Api.Core
+namespace Scs.Api.Core
 {
     public class GlobalExceptionHandler
     {

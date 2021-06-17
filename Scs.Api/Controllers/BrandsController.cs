@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Scs.Application;
 using Scs.Application.Commands;
 using Scs.Application.DataTransfer;
@@ -16,14 +17,14 @@ namespace Scs.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class BrandController : ControllerBase
+    public class BrandsController : ControllerBase
     {
 
         private readonly IApplicationActor actor;
         private readonly UseCaseExecutor executor;
 
 
-        public BrandController(IApplicationActor actor, UseCaseExecutor executor)
+        public BrandsController(IApplicationActor actor, UseCaseExecutor executor)
         {
             this.actor = actor;
             this.executor = executor;
@@ -32,6 +33,7 @@ namespace Scs.Api.Controllers
 
         // GET: api/<TestController>
         [HttpGet]
+        [Authorize]
         public IActionResult Get([FromQuery] BrandSearch search, [FromServices] IGetBrandsQuery query)
         {
 
