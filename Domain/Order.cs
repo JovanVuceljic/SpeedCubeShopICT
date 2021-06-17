@@ -11,6 +11,7 @@ namespace Scs.Domain
         public string Address { get; set; }
         public DateTime CreateAt { get; set; }
         public DateTime DeliveredAt { get; set; }
-        public ICollection<OrderLine> Carts { get; set; } = new HashSet<OrderLine>();
+        public int OrderLineId { get; set; }
+        public OrderLine OrderLine { get; set; }
     }
 }

@@ -8,6 +8,7 @@ namespace Scs.Domain
     {
         public int Id { get; set; }
         public string Name { get; set; }
+        public virtual ICollection<ProductCategory> ProductCategories { get; set; } = new HashSet<ProductCategory>();
 
     }
 }

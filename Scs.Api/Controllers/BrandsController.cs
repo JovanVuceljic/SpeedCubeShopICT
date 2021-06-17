@@ -31,9 +31,8 @@ namespace Scs.Api.Controllers
         }
 
 
-        // GET: api/<TestController>
+        // GET: api/<BrandController>
         [HttpGet]
-        [Authorize]
         public IActionResult Get([FromQuery] BrandSearch search, [FromServices] IGetBrandsQuery query)
         {
 
@@ -42,14 +41,14 @@ namespace Scs.Api.Controllers
             return Ok(executor.ExecuteQuery(query, search));
         }
 
-        // GET api/<TestController>/5
+        // GET api/<BrandController>/5
         [HttpGet("{id}", Name = "Get")]
         public string Get(int id)
         {
             return "value";
         }
 
-        // POST api/<TestController>
+        // POST api/<BrandController>
         [HttpPost]
         public void Post([FromBody] BrandDto dto, [FromServices] ICreateBrandCommand command)
         {
@@ -62,7 +61,8 @@ namespace Scs.Api.Controllers
         {
         }
 
-        // DELETE api/<TestController>/5
+        // DELETE api/<BrandController>/5
+        // [Authorize]
         [HttpDelete("{id}")]
         public IActionResult Delete(int id, [FromServices] IDeleteBrandCommand command)
         {
