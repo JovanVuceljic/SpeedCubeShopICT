@@ -48,23 +48,18 @@ namespace Scs.Api
             services.AddTransient<IApplicationActor>(x =>
             {
                 var accessor = x.GetService<IHttpContextAccessor>();
-                Console.WriteLine(accessor);
                 var user = accessor.HttpContext.User;
 
-                Console.WriteLine(user);
                 if (user.FindFirst("ActorData") == null)
                 {
 
-                    Console.WriteLine("InvalidOperationException");
                     throw new InvalidOperationException("Actor data doesnt exist in token.");
                 }
 
                 var actorString = user.FindFirst("ActorData").Value;
 
-                Console.WriteLine(actorString);
                 var actor = JsonConvert.DeserializeObject<JwtActor>(actorString);
 
-                Console.WriteLine(actor);
                 return actor;
 
             }); 
