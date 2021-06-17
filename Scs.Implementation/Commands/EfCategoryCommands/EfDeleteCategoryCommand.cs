@@ -8,27 +8,27 @@ using System.Text;
 
 namespace Scs.Implementation.Commands
 {
-    public class EfDeleteBrandCommand : IDeleteBrandCommand
+    public class EfDeleteCategoryCommand : IDeleteCategoryCommand
     {
         public readonly ScsContext _context;
 
-        public EfDeleteBrandCommand(ScsContext context)
+        public EfDeleteCategoryCommand(ScsContext context)
         {
             _context = context;
         }
 
         public int Id => 1;
 
-        public string Name => "Deleting brand";
+        public string Name => "Deleting category";
 
         public void Execute(int request)
         {
-            var brand = _context.Brands.Find(request);
-            if(brand == null)
+            var category = _context.Categories.Find(request);
+            if(category == null)
             {
-                throw new EntityNotFoundException(request, typeof(Brand));
+                throw new EntityNotFoundException(request, typeof(Category));
             }
-            _context.Brands.Remove(brand);
+            _context.Categories.Remove(category);
             _context.SaveChanges();
         }
     }
