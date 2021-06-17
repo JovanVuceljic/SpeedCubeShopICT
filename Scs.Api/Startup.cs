@@ -40,14 +40,15 @@ namespace Scs.Api
         {
             services.AddTransient<ScsContext>();
             
+            //Brands
             services.AddTransient<ICreateBrandCommand, EfCreateBrandCommad>();
             services.AddTransient<IGetBrandsQuery, EfGetBrandsQuery>();
             services.AddTransient<IDeleteBrandCommand, EfDeleteBrandCommand>();
 
-
+            //Categories
             services.AddTransient<ICreateCategoryCommand, EfCreateCategoryCommand>();
+            services.AddTransient<IGetCategoriesQuery, EfGetCategoriesQuery>();
             services.AddTransient<IDeleteCategoryCommand, EfDeleteCategoryCommand>();
-            //services.AddTransient<IGetCategoriesQuery, EfGetCategoryQuery>();
 
 
             services.AddHttpContextAccessor();
@@ -74,9 +75,8 @@ namespace Scs.Api
             services.AddTransient<IUseCaseLogger, ConsoleUseCaseLogger>();
             services.AddTransient<UseCaseExecutor>();
             services.AddTransient<CreateBrandValidator>();
+            services.AddTransient<CreateCategoryValidator>();
             services.AddTransient<JwtManager>();
-
-
 
 
             services.AddAuthentication(options =>

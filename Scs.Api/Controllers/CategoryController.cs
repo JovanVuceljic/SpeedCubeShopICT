@@ -1,11 +1,11 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Scs.Application;
 using Scs.Application.Commands;
 using Scs.Application.DataTransfer;
-using Scs.Application.Exceptions;
 using Scs.Application.Queries;
 using Scs.Application.Searches;
+using Scs.Application.Exceptions;
+using Microsoft.AspNetCore.Authorization;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,44 +23,40 @@ namespace Scs.Api.Controllers
         private readonly IApplicationActor actor;
         private readonly UseCaseExecutor executor;
 
-
         public CategoryController(IApplicationActor actor, UseCaseExecutor executor)
         {
             this.actor = actor;
             this.executor = executor;
         }
 
-        
-        // GET: api/<TestController>
+        // GET: api/<CategoryController>
         [HttpGet]
         public IActionResult Get([FromQuery] CategorySearch search, [FromServices] IGetCategoriesQuery query)
         {
-
             return Ok(executor.ExecuteQuery(query, search));
         }
-        
 
-        // GET api/<TestController>/5
-        [HttpGet("{id}", Name = "Get")]
+        // GET api/<CategoryController>/5
+        [HttpGet("{id}", Name = "GetCategory")]
         public string Get(int id)
         {
             return "value";
         }
 
-        // POST api/<TestController>
+        // POST api/<CategoryController>
         [HttpPost]
         public void Post([FromBody] CategoryDto dto, [FromServices] ICreateCategoryCommand command)
         {
             executor.ExecuteCommand(command, dto);
         }
 
-        // PUT api/<TestController>/5
+        // PUT api/<CategoryController>/5
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] string value)
         {
         }
 
-        // DELETE api/<TestController>/5
+        // DELETE api/<CategoryController>/5
         [HttpDelete("{id}")]
         public IActionResult Delete(int id, [FromServices] IDeleteCategoryCommand command)
         {
