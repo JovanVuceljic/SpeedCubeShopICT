@@ -27,7 +27,7 @@ namespace Scs.Implementation.Queries
         public PagedResponse<CategoryDto> Execute(CategorySearch search)
         {
 
-            var query = context.Brands.AsQueryable();
+            var query = context.Categories.AsQueryable();
 
             if (!string.IsNullOrEmpty(search.Name) || !string.IsNullOrWhiteSpace(search.Name))
             {
