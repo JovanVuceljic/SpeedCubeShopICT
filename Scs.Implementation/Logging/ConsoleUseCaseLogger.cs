@@ -12,6 +12,7 @@ namespace Scs.Implementation.Logging
         {
             Console.WriteLine($"{DateTime.Now}: {actor.Identity} is trying to execute {useCase.Name} using data: " +
                 $"{JsonConvert.SerializeObject(data)}");
+            // TODO add to database
         }
     }
 }

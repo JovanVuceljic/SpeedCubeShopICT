@@ -14,8 +14,8 @@ namespace Scs.Application.DataTransfer
         public decimal Price { get; set; }
         public int BrandId { get; set; }
         public Brand Brand { get; set; }
+        public int CartItemId { get; set; }
         public ICollection<ProductCategory> ProductCategories { get; set; } = new HashSet<ProductCategory>();
-        public ICollection<OrderLine> Carts { get; set; } = new HashSet<OrderLine>();
 
     }
 }

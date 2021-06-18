@@ -4,12 +4,12 @@ using System.Text;
 
 namespace Scs.Domain
 {
-    public class Order
+    public class CartItemDto
     {
         public int Id { get; set; }
+        public int ProductId { get; set; }
         public int UserId { get; set; }
-        public string Address { get; set; }
-        public DateTime CreatedAt { get; set; }
-        public DateTime? DeliveredAt { get; set; }
+        public int? OrderId { get; set; }
+        public int Quantity { get; set; }
     }
 }

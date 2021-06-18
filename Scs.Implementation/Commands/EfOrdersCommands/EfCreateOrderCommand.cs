@@ -27,8 +27,7 @@ namespace Scs.Implementation.Commands.EfOrdersCommands
             {
                 Address = request.Address,
                 UserId = request.UserId,
-                CreateAt = DateTime.Now,
-                OrderLineId = request.OrderLineId
+                CreatedAt = DateTime.Now,
             };
 
             _context.Orders.Add(order);

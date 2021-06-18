@@ -18,6 +18,7 @@ namespace Scs.Domain
         public string Password { get; set; }
 
         public virtual ICollection<UserUserCase> UserUserCases { get; set; }
-        public virtual ICollection<OrderLine> OrderLines { get; set; }
+        public virtual ICollection<CartItem> CartItems { get; set; }
+        public virtual ICollection<Order> Orders { get; set; }
     }
 }

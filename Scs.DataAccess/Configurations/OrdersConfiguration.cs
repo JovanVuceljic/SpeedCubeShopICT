@@ -15,9 +15,8 @@ namespace Scs.EfDataAccess.Configurations
                 .HasMaxLength(40)
                 .IsRequired();
 
-            builder.HasIndex(p => p.OrderLineId)
-                .IsUnique();
-
+            // TODO CartItems > 0
+                
         }
     }
 }

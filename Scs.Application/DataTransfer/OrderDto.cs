@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Scs.Domain;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -11,6 +12,6 @@ namespace Scs.Application.DataTransfer
         public string Address { get; set; }
         public DateTime CreateAt { get; set; }
         public int OrderLineId { get; set; }
-       // public OrderLine OrderLine { get; set; }
+        public ICollection<CartItem> CartItems { get; set; } = new HashSet<CartItem>();
     }
 }

@@ -50,9 +50,8 @@ namespace Scs.Implementation.Queries
                 {
                     Id = x.Id,
                     Address = x.Address,
-                    CreateAt = x.CreateAt,
-                    UserId = x.UserId,
-                    OrderLineId = x.OrderLineId
+                    CreateAt = x.CreatedAt,
+                    UserId = x.UserId
 
                 }).ToList()
             };

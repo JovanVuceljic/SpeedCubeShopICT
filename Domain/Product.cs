@@ -13,6 +13,6 @@ namespace Scs.Domain
         public int BrandId { get; set; }
         public virtual Brand Brand { get; set; }
         public virtual ICollection<ProductCategory> ProductCategories { get; set; } = new HashSet<ProductCategory>();
-        public virtual ICollection<OrderLine> Carts { get; set; } = new HashSet<OrderLine>();
+        public virtual ICollection<CartItem> Carts { get; set; } = new HashSet<CartItem>();
     }
 }
