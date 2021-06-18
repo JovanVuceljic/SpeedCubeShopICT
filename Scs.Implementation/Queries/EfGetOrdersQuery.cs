@@ -18,7 +18,7 @@ namespace Scs.Implementation.Queries
             this.context = context;
         }
 
-        public int Id => 1;
+        public int Id => 3;
 
         public string Name => "Orders Search";
 

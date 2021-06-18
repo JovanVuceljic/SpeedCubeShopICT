@@ -13,7 +13,7 @@ namespace Scs.Implementation.Validators
         public CreateProductCategoryValidator(ScsContext context)
         {
             RuleFor(x => x.CategoryId).Must(x => context.Categories.Any(c => c.Id == x)).WithMessage("Category doesn't exist.");
-           // RuleFor(x => x.ProductId).Must(x => context.Products.Any(c => c.Id == x)).WithMessage("Product doesn't exist.");
+            RuleFor(x => x.ProductId).Must(x => context.Products.Any(c => c.Id == x)).WithMessage("Product doesn't exist.");
 
         }
     }
