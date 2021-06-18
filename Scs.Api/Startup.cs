@@ -24,6 +24,8 @@ using Scs.Implementation.Queries;
 using Scs.Implementation.Validators;
 using Newtonsoft.Json;
 using Scs.Implementation;
+using Scs.Application.Commands.OrderCommands;
+using Scs.Implementation.Commands.EfOrdersCommands;
 
 namespace Scs.Api
 {
@@ -51,9 +53,24 @@ namespace Scs.Api
             services.AddTransient<IDeleteCategoryCommand, EfDeleteCategoryCommand>();
 
 
+            //Orders
+            services.AddTransient<ICreateOrderCommand, EfCreateOrderCommand>();
+            services.AddTransient<IGetOrdersQuery, EfGetOrdersQuery>();
+            services.AddTransient<IDeleteOrderCommand, EfDeleteOrderCommand>();
+
+
             services.AddHttpContextAccessor();
 
-            //services.AddTransient<IApplicationActor, AdminFakeActor>();
+            services.AddTransient<IApplicationActor, AdminFakeActor>();
+
+
+            services.AddTransient<IUseCaseLogger, ConsoleUseCaseLogger>();
+            services.AddTransient<UseCaseExecutor>();
+            services.AddTransient<CreateBrandValidator>();
+            services.AddTransient<CreateCategoryValidator>();
+            //services.AddTransient<JwtManager>();
+
+            /*
             services.AddTransient<IApplicationActor>(x =>
             {
                 var accessor = x.GetService<IHttpContextAccessor>();
@@ -72,11 +89,6 @@ namespace Scs.Api
                 return actor;
 
             }); 
-            services.AddTransient<IUseCaseLogger, ConsoleUseCaseLogger>();
-            services.AddTransient<UseCaseExecutor>();
-            services.AddTransient<CreateBrandValidator>();
-            services.AddTransient<CreateCategoryValidator>();
-            services.AddTransient<JwtManager>();
 
 
             services.AddAuthentication(options =>
@@ -100,8 +112,10 @@ namespace Scs.Api
                     ClockSkew = TimeSpan.Zero
                 };
             });
-
+            
+            */
             services.AddControllers();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
