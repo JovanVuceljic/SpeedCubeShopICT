@@ -9,7 +9,7 @@ namespace Scs.DataAccess
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Data Source=COJA-PC\SQLEXPRESS;Initial Catalog=databasefixes;Integrated Security=True");
+            optionsBuilder.UseSqlServer(@"Data Source=COJA-PC\SQLEXPRESS;Initial Catalog=SpeedCubeShop;Integrated Security=True");
             base.OnConfiguring(optionsBuilder);
         }
 
@@ -20,6 +20,7 @@ namespace Scs.DataAccess
             modelBuilder.ApplyConfiguration(new BrandConfiguration());
             modelBuilder.ApplyConfiguration(new OrdersConfiguration());
             modelBuilder.ApplyConfiguration(new ProductConfiguration());
+            modelBuilder.ApplyConfiguration(new CartItemConfiguration());
         }
         public DbSet<Brand> Brands { get; set; }
         public DbSet<User> Users { get; set; }

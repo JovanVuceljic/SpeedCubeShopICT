@@ -62,6 +62,10 @@ namespace Scs.Api
             services.AddTransient<IDeleteProductCommand, EfDeleteProductCommand>();
             services.AddTransient<IGetProductQuery, EfGetProductQuery>();
 
+            //CartItem
+            services.AddTransient<ICreateCartItemCommand, EfCreateCartItemCommand>();
+            services.AddTransient<IDeleteCartItemCommand, EfDeleteCartItemCommand>();
+            services.AddTransient<IGetCartItemQuery, EfGetCartItemQuery>();
 
             //Orders
             services.AddTransient<ICreateOrderCommand, EfCreateOrderCommand>();
@@ -80,6 +84,7 @@ namespace Scs.Api
             services.AddTransient<CreateCategoryValidator>();
             services.AddTransient<CreateProductCategoryValidator>();
             services.AddTransient<CreateProductValidator>();
+            services.AddTransient<CreateCartItemValidator>();
             //services.AddTransient<JwtManager>();
 
             /*

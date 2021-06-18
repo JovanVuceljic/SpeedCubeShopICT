@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Scs.Domain
+namespace Scs.Application.DataTransfer
 {
     public class CartItemDto
     {
