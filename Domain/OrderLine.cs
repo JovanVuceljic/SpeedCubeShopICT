@@ -14,7 +14,7 @@ namespace Scs.Domain
         public Product Product { get; set; }
         public int Quantity { get; set; }
         public DateTime CreatedAt { get; set; }
-        public DateTime DeliveredAt { get; set; }
+        public DateTime? DeliveredAt { get; set; }
         public ICollection<Order> Orders { get; set; } = new HashSet<Order>();
     }
 }
