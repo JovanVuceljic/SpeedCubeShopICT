@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Scs.Application.Commands
 {
-    public interface IDeleteProductCategoryCommand : ICommand<int>
+    public interface IDeleteProductCommand : ICommand<int>
     {
     }
 }
