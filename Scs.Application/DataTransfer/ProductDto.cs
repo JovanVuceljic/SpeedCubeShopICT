@@ -15,7 +15,6 @@ namespace Scs.Application.DataTransfer
         public int BrandId { get; set; }
         public Brand Brand { get; set; }
         public int CartItemId { get; set; }
-        public ICollection<ProductCategory> ProductCategories { get; set; } = new HashSet<ProductCategory>();
 
     }
 }
