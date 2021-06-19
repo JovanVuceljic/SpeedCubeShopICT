@@ -1,6 +1,6 @@
 ![Logo](https://github.com/JovanVuceljic/SpeedCubeShopICT/blob/main/logo.png)
 
-# SpeedCubeShopICT
+# SpeedCubeShop
 
 ### Project theme  
 Rubik's cube shop, only fast solving cubes, mostly used for competitions.
