@@ -1,4 +1,4 @@
-![Logo](https://github.com/JovanVuceljic/SpeedCubeShopICT/logo.png)
+![Logo](https://github.com/JovanVuceljic/SpeedCubeShopICT/blob/main/logo.png)
 
 # SpeedCubeShopICT
 
