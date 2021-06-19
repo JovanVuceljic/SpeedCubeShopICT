@@ -7,10 +7,16 @@ Rubik's cube shop, only fast solving cubes, mostly used for competitions.
 
 
 ### Functionalities
-Routes (GET, POST, DELETE) with validations, search and pagination functions for databes tables Brands, Categories, CartItems, Orders, Products.
+
+Routes (get, post, delete) with validations, search and pagination functionalities for database tables Brands, Categories, CartItems, Orders, Products.
+
 Loging to console
+
 Exception handling
-JWT Token Auth (incomplete) 
+
+Auth for delete with JWT Token  
+
+
 
 ### Additional info
 All files without .gitignore file are on [branch](https://github.com/JovanVuceljic/SpeedCubeShopICT/tree/full) if needed for some reason
