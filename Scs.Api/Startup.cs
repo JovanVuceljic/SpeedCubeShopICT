@@ -75,9 +75,6 @@ namespace Scs.Api
 
             services.AddHttpContextAccessor();
 
-            services.AddTransient<IApplicationActor, AdminFakeActor>();
-
-
             services.AddTransient<IUseCaseLogger, ConsoleUseCaseLogger>();
             services.AddTransient<UseCaseExecutor>();
             services.AddTransient<CreateBrandValidator>();
@@ -85,8 +82,9 @@ namespace Scs.Api
             services.AddTransient<CreateProductCategoryValidator>();
             services.AddTransient<CreateProductValidator>();
             services.AddTransient<CreateCartItemValidator>();
-            //services.AddTransient<JwtManager>();
+            services.AddTransient<JwtManager>();
 
+            services.AddTransient<IApplicationActor, AdminFakeActor>();
             /*
             services.AddTransient<IApplicationActor>(x =>
             {
@@ -106,7 +104,7 @@ namespace Scs.Api
                 return actor;
 
             }); 
-
+            */
 
             services.AddAuthentication(options =>
             {
@@ -123,14 +121,13 @@ namespace Scs.Api
                     ValidateIssuer = true,
                     ValidAudience = "Any",
                     ValidateAudience = true,
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("ThisIsMyVerySecretKey")),
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("SpeedCubeShopSecretKey")),
                     ValidateIssuerSigningKey = true,
                     ValidateLifetime = true,
                     ClockSkew = TimeSpan.Zero
                 };
             });
             
-            */
             services.AddControllers();
 
         }

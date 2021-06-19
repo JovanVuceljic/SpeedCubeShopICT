@@ -62,7 +62,7 @@ namespace Scs.Api.Controllers
         }
 
         // DELETE api/<BrandController>/5
-        // [Authorize]
+        [Authorize]
         [HttpDelete("{id}")]
         public IActionResult Delete(int id, [FromServices] IDeleteBrandCommand command)
         {

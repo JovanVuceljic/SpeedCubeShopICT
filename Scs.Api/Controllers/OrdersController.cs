@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Scs.Application;
 using Scs.Application.Commands.OrderCommands;
 using Scs.Application.DataTransfer;
@@ -55,6 +56,7 @@ namespace Scs.Api.Controllers
         }
 
         // DELETE api/<OrdersController>/5
+        [Authorize]
         [HttpDelete("{id}")]
         public IActionResult Delete(int id, [FromServices] IDeleteOrderCommand command)
         {

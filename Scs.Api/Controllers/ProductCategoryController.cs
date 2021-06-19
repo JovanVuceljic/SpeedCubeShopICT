@@ -57,6 +57,7 @@ namespace Scs.Api.Controllers
         }
 
         // DELETE api/<ProductCategoryController>/5
+        [Authorize]
         [HttpDelete("{id}")]
         public IActionResult Delete(int id, [FromServices] IDeleteProductCategoryCommand command)
         {
