@@ -1,0 +1,17 @@
+C:\Users\Coja\source\repos\Domain\Domain\bin\Debug\netcoreapp3.1\Scs.Domain.deps.json
+C:\Users\Coja\source\repos\Domain\Domain\bin\Debug\netcoreapp3.1\Scs.Domain.dll
+C:\Users\Coja\source\repos\Domain\Domain\bin\Debug\netcoreapp3.1\Scs.Domain.pdb
+C:\Users\Coja\source\repos\Domain\Domain\obj\Debug\netcoreapp3.1\Scs.Domain.csproj.AssemblyReference.cache
+C:\Users\Coja\source\repos\Domain\Domain\obj\Debug\netcoreapp3.1\Scs.Domain.AssemblyInfoInputs.cache
+C:\Users\Coja\source\repos\Domain\Domain\obj\Debug\netcoreapp3.1\Scs.Domain.AssemblyInfo.cs
+C:\Users\Coja\source\repos\Domain\Domain\obj\Debug\netcoreapp3.1\Scs.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Coja\source\repos\Domain\Domain\obj\Debug\netcoreapp3.1\Scs.Domain.dll
+C:\Users\Coja\source\repos\Domain\Domain\obj\Debug\netcoreapp3.1\Scs.Domain.pdb
+D:\Coja\Fax\ASP\project\SpeedCubeShop\Domain\bin\Debug\netcoreapp3.1\Scs.Domain.deps.json
+D:\Coja\Fax\ASP\project\SpeedCubeShop\Domain\bin\Debug\netcoreapp3.1\Scs.Domain.dll
+D:\Coja\Fax\ASP\project\SpeedCubeShop\Domain\bin\Debug\netcoreapp3.1\Scs.Domain.pdb
+D:\Coja\Fax\ASP\project\SpeedCubeShop\Domain\obj\Debug\netcoreapp3.1\Scs.Domain.AssemblyInfoInputs.cache
+D:\Coja\Fax\ASP\project\SpeedCubeShop\Domain\obj\Debug\netcoreapp3.1\Scs.Domain.AssemblyInfo.cs
+D:\Coja\Fax\ASP\project\SpeedCubeShop\Domain\obj\Debug\netcoreapp3.1\Scs.Domain.csproj.CoreCompileInputs.cache
+D:\Coja\Fax\ASP\project\SpeedCubeShop\Domain\obj\Debug\netcoreapp3.1\Scs.Domain.dll
+D:\Coja\Fax\ASP\project\SpeedCubeShop\Domain\obj\Debug\netcoreapp3.1\Scs.Domain.pdb
