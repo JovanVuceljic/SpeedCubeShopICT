@@ -39,7 +39,7 @@ namespace Scs.Api.Core
             var actor = new JwtActor
             {
                 Id = user.Id,
-                AllowedUseCases = user.UserUserCases.Select(x => x.UseCaseId),
+                AllowedUseCases = user.UserUserCases.Select(x => x.UserCaseId),
                 Identity = user.Username
             };
             
