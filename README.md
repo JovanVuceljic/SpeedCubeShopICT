@@ -8,7 +8,7 @@ Rubik's cube shop, only fast solving cubes, mostly used for competitions.
 
 ### Functionalities
 
-Routes (get, post, delete) with validations, search and pagination functionalities for database tables Brands, Categories, CartItems, Orders, Products.
+Routes (get, post, delete) with validations, search and pagination functionalities for database tables Brands, Categories, CartItems, Orders, Products, ProductsCategories.
 
 Loging to console
 
