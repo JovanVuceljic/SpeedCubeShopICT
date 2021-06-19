@@ -25,21 +25,20 @@ namespace Scs.Api.Controllers
         [HttpPost]
         public IActionResult Post([FromBody] LoginRequest request)
         {
-            /*
             return Ok(new
             {
                 token = manager.MakeToken("", "")
             });
-            */
+            /*
+       var token = manager.MakeToken(request.Username, request.Password);
 
-            var token = manager.MakeToken(request.Username, request.Password);
-
-            if (token == null)
-            {
-                return Unauthorized();
-            }
+       if (token == null)
+       {
+           return Unauthorized();
+       }
 
             return Ok(new { token });
+       */
         }
         public class LoginRequest
         {

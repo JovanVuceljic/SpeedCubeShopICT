@@ -27,7 +27,8 @@ namespace Scs.Api.Core
 
         public string MakeToken(string username, string password)
         {
-            
+
+            /*
             var user = _context.Users.Include(u => u.UserUserCases)
                .FirstOrDefault(x => x.Username == username && x.Password == password);
 
@@ -36,17 +37,18 @@ namespace Scs.Api.Core
                 return null;
             }
 
-            var actor = new JwtActor
+              var actor = new JwtActor
             {
                 Id = user.Id,
                 AllowedUseCases = user.UserUserCases.Select(x => x.UserCaseId),
                 Identity = user.Username
             };
-            
-            //var actor = new AdminFakeActor();
+            */
+
+            var actor = new AdminFakeActor();
 
             var issuer = "asp_api";
-            var secretKey = "ThisIsMyVerySecretKey";
+            var secretKey = "SpeedCubeShopSecretKey";
             var claims = new List<Claim> 
             {
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString(), ClaimValueTypes.String, issuer),
@@ -66,7 +68,7 @@ namespace Scs.Api.Core
                 audience: "Any",
                 claims: claims,
                 notBefore: now,
-                expires: now.AddSeconds(30),
+                expires: now.AddSeconds(1000),
                 signingCredentials: credentials);
 
             return new JwtSecurityTokenHandler().WriteToken(token);
